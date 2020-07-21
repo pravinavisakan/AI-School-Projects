@@ -1,0 +1,29 @@
+Explanations for Homework 1 
+CS161: Artificial Intelligence, Fall 2019, UCLA
+Written by Pravin Visakan UID:504825910
+
+1. The output of my tester function for n=10 to n=0 is displayed below:
+
+"PAD test:" 
+(12 9 7 5 4 3 2 2 1 1 1) 
+
+For large values of "n", the REPL reports a stack overflow. This is likely due to the recursive nature of my function. Even though the recursive call is towards the end, the result must be cons to any previous result - thus, tail-call optimization is not possible for my implementation.
+
+2. The output of the SUMS test is as follows for inputs n = 10 to n = 0:
+
+"SUMS test:" 
+(11 8 6 4 3 2 1 1 0 0 0) 
+
+The output is that of the Padovan function, minus 1. This is because each time two numbers are added together in the Padovan sequence, it'll invoke a base case 2, 1, or 0 times. If it invokes it 2 times in the original sequence, the result will be two; by definition, it'll be 1 in SUMS. If a base case is invoked once, n must equal 5, which can by observation be seen to follow PAD(n)=SUMS-1. In the last case, it will eventually decompose into the above two cases; here, adding them together would result in a -1 discrepancy from the Padovan for each case encountered, but because we add one in whenever these cases are encountered, we remain at a -1 deficit overall.
+
+3. The output of the ANON test cases are below, along with the corresponding commands:
+
+?				; (print (ANON '42))
+? 				; (print (ANON 'FOO))
+(((? ?) ?) ?) 			; (print (ANON '(((L E) F) T)))
+(? ? ? ?) 			; (print (ANON '(5 FOO 3.1 -0.2)))
+(? (? ?) ?) 			; (print (ANON '(1 (FOO 3.1) -0.2)))
+(((? ?) (? ?)) (? ?)) 		; (print (ANON '(((1 2) (FOO 3.1)) (BAR -0.2))))
+(? (? (? (? ?))))		; (print (ANON '(R (I (G (H T))))))
+
+
