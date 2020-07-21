@@ -1,0 +1,21 @@
+## Answers to the Questions in Homework 4
+
+* According to RSAT, the graph1 SAT with 3 colors is unsatisfiable.
+
+* With 4 colors, the problem becomes satisfiable.
+
+* These answers tell us at least 4 colors are needed to color everything. The output of RSAT is as follows:
+
+v -1 -2 -3 4 -5 -6 7 -8 -9 10 -11 -12 -13 -14 15 -16 17 -18 -19 -20 -21 22 -23 -24 25 -26 -27 -28 0
+
+Assuming colors go {red, green, blue, pink}, this means the following coloring works:
+
+1, pink
+2, blue
+3, green
+4, blue
+5, red
+6, green
+7, red
+
+* 8 colors are needed to satisfy graph2's SAT problem
